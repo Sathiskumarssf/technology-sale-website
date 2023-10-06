@@ -1,0 +1,598 @@
+
+    
+*{
+   margin: 0%;
+   padding: 0%;
+}
+
+.main-page{
+   background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.5)),url('white-bokeh-effect-black-background.jpg');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   height: 100vh;
+   width: 100vw;
+   margin: auto;
+   position: relative;
+}
+ .imag{
+  width: 19%;
+  height: 10%;
+ }
+.main-page span{
+   margin-left: 10%;
+}
+
+.frit-line{
+   color: red;
+   margin-left: 10%;
+}
+.discription{
+   position: absolute;
+   display: flex;
+   right: 8%;
+   margin: 2% 2%;
+   
+      }
+
+.discription  li{
+   list-style: none;
+   display: inline-block;
+   margin: 0 20px;
+   position: relative;
+}
+.discription  li a{
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+.discription  li a::after{
+   content: '';
+   height: 3px;
+   width: 0;
+   background: #009688;
+   position: absolute;
+   left: 0;
+   bottom: -10px;
+transition: 0.5s;
+}
+
+.discription  li a:hover:after{
+   width: 100%;
+}
+
+.content{
+   width: 60%;
+   height: 50%;
+   border: 3px solid;
+   position: relative;
+   left: 20%;
+   top: 10%;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   border: 1px solid ;
+
+}
+.dise{
+   color: white;
+   font-size: 22px;
+}
+
+.content h3{
+   margin: 0px;
+   padding: 10px;
+}
+
+.content button{
+   width: 100px;
+   padding: 5px 0;
+   text-align: center;
+   margin: 2px 1px;
+   border-radius: 25px;
+   font-weight: boolval;
+   border: 1px solid pink;
+   background: transparent;
+   color: white;
+   cursor: pointer;
+   position: relative;
+   overflow: hidden;
+}
+
+.content span{
+   background: rgba(224, 83, 83, 0.5);
+   height: 100%;
+   width: 0%;
+   border-radius: 25px;
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   z-index: -1px;
+   transition: 0.5s;
+}
+
+.content button:hover span{
+width: 100%;
+
+}
+.content button:hover{
+   border: none;
+}
+
+
+
+#collect{
+   position: absolute;
+   right: 40%;
+   top: 30%;
+   height: 0%;
+   display: none;
+   background-color:  darkslategray;
+   border-radius: 20PX;
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+
+} 
+
+#back{
+   position: absolute;
+   width: 10%;
+   background-color: chocolate;
+   border-radius: 10px;
+   top: 0%;
+   left: 0%;
+   height: 30px;
+}
+.collect-1{
+width: 100%;
+height: 30%;
+position: absolute;
+background-color: #009688;
+left: 0%;
+text-align: center;
+margin-top: 7%;
+}
+
+
+#collect label{
+   position: absolute;
+   margin-top: 18%;
+   font-size: 30px;
+   left: 10%;
+}
+
+
+
+#collect input{
+   position: absolute;
+   margin-top: 18%;
+   font-size: 30px;
+   left: 10%;
+}
+.login {
+width: 100px;
+height: 30px;
+background-color: yellow;
+border: 1px solid black;
+margin-left: 40%;
+margin-top: 0%;
+border-radius: 10px;
+}
+
+.login:hover{
+cursor: pointer;
+background-color: #009688;
+}
+
+
+
+#creat-aco{
+   position: absolute;
+      right: 40%;
+      top: 30%;
+      width: 50%;
+      height: 0%;
+      display: none;
+      background-color: darkslategray;
+      border-radius: 20PX;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+ }
+#creat-aco label{
+   
+   position: absolute;
+   margin-top: 18%;
+   font-size: 30px;
+   left: 10%;
+   margin-bottom: 2%;
+}
+#back1{
+   position: absolute;
+   width: 10%;
+   background-color: chocolate;
+   border-radius: 10px;
+   top: 0%;
+   left: 0%;
+   height: 30px;
+}
+
+#creat-aco input{
+   position: absolute;
+   
+   margin-top: 18%;
+   font-size: 30px;
+   left: 35%;
+
+}
+.create-btn {
+   position:absolute;
+width: 100px;
+height: 30px;
+background-color: yellow;
+border: 1px solid black;
+left: 40%;
+   top: 80%;
+border-radius: 10px;
+}
+
+.create-btn:hover{
+cursor: pointer;
+background-color: cornflowerblue;
+}
+
+
+
+@media(max-width: 568px){
+   
+   .frit-line{
+      font-size: 15px;
+      margin-left: 10px;
+   }
+
+    .discription li{
+        margin: 0% 5px;
+        left: 15%;
+        
+    }
+    .content{
+      width: 70%;
+      height: 60%;
+      border: 1px solid red;
+      position: absolute;
+      left: 0%;
+    border-radius: 20px;
+    margin-left: 15%;
+    margin-top: 10%;
+   }
+
+   .location ,.pass,.about,.fb{
+    font-size: 10px;
+    margin: 0px;
+    padding: 0%;
+   }
+
+   .frit-line span{
+    margin-left: 10px;
+   }
+
+   .dise {
+    margin-top: 10px;
+    font-size: 15px;
+   }
+   .dise2,.dise3{
+    font-size: 16px;
+   }
+
+   .collect{
+    width: 80%;
+    height: 60%;
+    border-radius: 10px;
+    left: 10%;
+   }
+   .collect-1{
+    height: 20%;
+    margin-top: 30px;
+   }
+
+   .collect-1 h1{
+    font-size: 20px;
+   }
+   .collect-1 h3{
+    font-size: 15px;
+   }
+   .collect-1 h2{
+    font-size: 15px;
+   }
+  
+   #collect label{
+      margin-top: 35%;
+     font-size: 90%;
+     width: 40%;
+    }
+ 
+    #collect input{
+      margin-top: 35%;
+       font-size: 90%;
+       width: 30%;
+       margin-left: 50%;
+    }
+
+   #back,#back1{
+    left: 0%;
+    width: 90px;
+   }
+
+   .login{
+    position: absolute;
+   
+    top: 70%;
+    margin-left: 0%;
+   }
+
+   #creat-aco{
+      width: 80%;
+      left: 10%;
+   }
+
+   .create-btn{
+
+    margin-left: 0%;
+    margin-top: 1%;
+   }
+
+
+   #creat-aco label{
+     margin-top: 35%;
+    font-size: 90%;
+    width: 40%;
+   }
+
+   #creat-aco input,#name{
+     margin-top: 35%;
+      font-size: 90%;
+      width: 40%;
+      margin-left: 20%;
+   }
+
+   
+   
+
+   
+}
+
+@media(max-width:768px ) and (min-width:569px){
+   
+   .frit-line{
+      font-size: 25px;
+      margin-left: 30px;
+   }
+
+    .discription li{
+        margin: 0% 10px;
+        left: 15%;
+        
+    }
+   .content{
+      width: 70%;
+      height: 60%;
+      border: 1px solid red;
+      position: absolute;
+      left: 0%;
+    border-radius: 20px;
+    margin-left: 15%;
+    margin-top: 10%;
+   }
+
+   .location ,.pass,.about,.fb{
+    font-size: 15px;
+    margin: 0px;
+    padding: 0%;
+   }
+
+   .frit-line span{
+    margin-left: 10px;
+   }
+
+   .dise {
+    margin-top: 10px;
+    font-size: 15px;
+   }
+   .dise2,.dise3{
+    font-size: 16px;
+   }
+   .collect{
+    width: 50%;
+    height: 60%;
+    border-radius: 10px;
+    
+   }
+   .collect-1{
+    height: 18%;
+    margin-top: 30px;
+   }
+
+   .collect-1 h1{
+    font-size: 20px;
+   }
+   .collect-1 h3{
+    font-size: 15px;
+   }
+   .collect-1 h2{
+    font-size: 15px;
+   }
+  
+   #collect label{
+      margin-top: 45%;
+     font-size: 90%;
+     width: 40%;
+    }
+ 
+    #collect input{
+      margin-top: 45%;
+       font-size: 90%;
+       width: 30%;
+       margin-left: 50%;
+    }
+
+   #back,#back1{
+    width: 100px;
+   }
+
+   .login{
+    position: absolute;
+   
+    top: 60%;
+    margin-left: 0%;
+   }
+
+   .create-btn{
+    margin-left: 0%;
+    margin-top: 0%;
+   }
+
+
+   #creat-aco label{
+      margin-top: 35%;
+     font-size: 90%;
+     width: 40%;
+    }
+ 
+    #creat-aco input,#name{
+      margin-top: 35%;
+       font-size: 90%;
+       width: 40%;
+       margin-left: 20%;
+    }
+ 
+
+   
+}
+@media(min-width:769px){
+   
+   .frit-line{
+      font-size: 25px;
+      margin-left: 30px;
+   }
+
+    .discription li a{
+        margin: 0% 10px;
+        left: 5%;
+        font-size: 25px;
+    }
+   .content{
+      width: 70%;
+      height: 60%;
+      border: 1px solid;
+      position: absolute;
+      left: 0%;
+    border-radius: 20px;
+    margin-left: 15%;
+    margin-top: 10%;
+   }
+
+
+   .frit-line span{
+    margin-left: 10px;
+   }
+
+   
+  
+   .collect{
+    width: 40%;
+    height: 60%;
+    border-radius: 10px;
+   }
+   .collect-1{
+    height: 20%;
+   }
+
+   
+  
+   .collect label{
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 30%;
+   }
+
+   #input1{
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 30%;
+   
+   }
+   #input2{
+      position: absolute;
+    margin-top: 20%;
+    margin-left: 32%;
+    
+   }
+
+   #back,#back1{
+    left: 0%;
+   }
+
+   .login{
+    position: absolute;
+   
+    top: 70%;
+   left: 5%;
+   }
+
+   
+
+   #creat-aco label{
+      margin-top: 25%;
+     font-size: 130%;
+     width: 40%;
+     
+    }
+   #creat_aco{
+     width: 40%;
+   }
+    #creat-aco input,#name{
+      margin-top: 025%;
+     
+       width: 30%;
+       font-size: 130%;
+       margin-left: 10%;
+    }
+  
+
+    #collect label{
+      margin-top: 25%;
+     font-size: 130%;
+     width: 40%;
+     margin-left: 0%;
+     
+    }
+ 
+    #collect input{
+      margin-top: 25%;
+       font-size: 130%;
+       width: 30%;
+       margin-left: 40%;
+       
+    }
+
+   .dise{
+      font-size: 40px;
+   }
+
+   .dise2{
+      font-size: 30px;
+   }
+   .dise3{
+      font-size: 25px;
+   }
+
+   #show,#creat{
+      font-size: 30px;
+      width: 200px;
+   }
+
+   .create-btn{
+      top: 90%;
+   }
+}
