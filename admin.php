@@ -15,14 +15,18 @@
   $sql2 ="INSERT INTO images (image_url,name,price) VALUES ('$image_url','$image_name','$image_price')";
 
   if(isset($_POST["move_image"]) && isset($_FILES["protect_path"])){
-    echo $_FILES["protect_path"]['name'];
+   
     $image_name =$_POST["protect_name"];
     $image_url=$_FILES["protect_path"]['name'];
-   
+    $imgae_category=$_POST["categories"];
     $image_price=$_POST["protect_price"];
-    $sql2 ="INSERT INTO images (image_url,name,price) VALUES ('$image_url','$image_name','$image_price')";
+    $sql2 ="INSERT INTO images (image_url,name,price,category) VALUES ('$image_url','$image_name','$image_price','$imgae_category')";
+
+    if(!empty($image_name)&& !empty( $image_url)&&  !empty($imgae_category) &&!empty($image_price)){
     mysqli_query($conn,$sql2);
-  
+  }else{
+    echo '<script>alert("You shoud fill all the blanks of the prodect detail!");</script>';
+ }
 }
   ?>
 
@@ -186,7 +190,7 @@
             width: 90%; /* Ensure images don't exceed column width */
             height: auto;
             height: 90%;
-            margin-left: 5%;
+            margin-left: 0%;
              border-radius: 20px;
         }
 
@@ -258,6 +262,7 @@ li{
         top: 84%;
         margin-left: 40%;
         height: 40px;
+        cursor: pointer;
     }
 
   #buy{
@@ -265,12 +270,19 @@ li{
     font-size: 40px;
     width: 30%;
     border-radius: 20px;
+    cursor: pointer;
   }
+
+  #buy:hover{
+    background-color: lightskyblue;
+  }
+
+ 
 
   #add_items_inform{
       position: absolute;
-      right: 40%;
-      top: 30%;
+      right: 10%;
+      top: 20%;
       height: 0%;
       display: none;
       background-color: lightslategrey;
@@ -346,43 +358,37 @@ li{
       top: 60%;
     }
 
-    #photo1{
-      top: 20%;
+    .alb{
+      width: 80%;
     }
 
    #lab_link {
    position: absolute;
     top: 90%;
-    left: 35%;
-    margin: 4% 4%;
    }
    #phone_link {
    position: absolute;
     top: 90%;
-    left: 0%;
-    margin: 4% 4%;
-
+    left: 25%;
    }
 
+
+   .photo1{
+      height: 40%;
+      width: 50%;
+    }
+
     #buy{
-        width: 100px;
-        
-    }
-
-    .alb{
-        width: 80%;
-    }
-
-    .photo1{
-      height: 50%;
+      width: 100px;
     }
 
 
     #add_iterms{
     position: absolute;
     top: 90%;
-    left: 30%;
+    left: 25%;
    }
+
 
    #add_items_inform{
     width: 80%;
@@ -402,47 +408,60 @@ li{
    }
 
   }
-  @media(max-width:767px) and (min-width:569px ){
+  @media(max-width:768px) and (min-width:569px ){
     .image{
       width: 20%;
     }
 
     .search,.profile{
-      width: 50px;
+      width: 60px;
       
+    }
+
+    #buy{
+      width: 100px;
+    }
+
+    #add_iterms{
+      top: 90%;
     }
     .search{
       right: 20%;
     }
-    .alb{
-        width: 40%;
-    }
+
     .wel{
       font-size: 30px;
     }
     .sale_items{
       position: absolute;
-      font-size: 25px;
-      top: 60%;
+      font-size: 35px;
+      top: 65%;
     }
-    #lab_link ,#phone_link{
+    #lab_link {
    position: absolute;
     top: 90%;
    }
-
-   #add_iterms{
-    position: absolute;
-    top: 80%;
+    #phone_link {
+   position: absolute;
+    top: 90%;
+    left: 15%;
    }
+
    .alb{
       width: 40%;
     }
 
     .photo1{
-      height: 60%;
+      height: 45%;
+      width: 60%;
+      top: 27%;
     }
+   #add_iterms{
+    position: absolute;
+    top: 90%;
 
-    #add_items_inform{
+   }
+   #add_items_inform{
     width: 80%;
     height: 40%;
     position: absolute;
@@ -462,17 +481,62 @@ li{
   }
 
   @media(min-width:769px){
-    .alb{
-        width: 27%;
+    .image{
+      width: 20%;
+    }
+
+    .search,.profile{
+      width: 70px;
+      
     }
 
     #buy{
-      width: 150px;
+      width: 100px;
     }
 
-    #add_items_inform{
+    #add_iterms{
+      top: 90%;
+    }
+    .search{
+      right: 20%;
+    }
+
+    .wel{
+      font-size: 30px;
+    }
+    .sale_items{
+      position: absolute;
+      font-size: 35px;
+      
+    }
+    #lab_link {
+   position: absolute;
+    top: 90%;
+   }
+    #phone_link {
+   position: absolute;
+    top: 90%;
+    left: 15%;
+   }
+
+   .alb{
+      width: 27%;
+    }
+
+    .photo1{
+      height: 50%;
+      width: 30%;
+      top: 27%;
+    }
+   #add_iterms{
+    position: absolute;
+    top: 90%;
+
+   }
+
+   #add_items_inform{
     width: 40%;
-    height: 90%;
+    height: 70%;
     position: absolute;
     left: 10%;
    }
@@ -483,7 +547,7 @@ li{
    }
    #add_items_inform input{
    
-   
+    height: 30px;
     width: 40%;
    }
 
@@ -523,6 +587,9 @@ li{
             <input name="protect_path" type="file" ><br>
             <label for="price">Enter the price</label>
             <input type="number" name="protect_price" id=""><br>
+            <label for="categories" >The category: </label>
+            <input type="text" name="categories" id="category"><br>
+            
             <button id="move_image" name="move_image">Submit</button>
         </div>
        </form>
@@ -533,7 +600,7 @@ li{
       <h1 id="phone_page"> Phone items</h1>
       <section id="phone_items">
     <?php 
-          $sql = "SELECT * FROM images ";
+          $sql = "SELECT * FROM images where category= 'phone'";
           $res = mysqli_query($conn,  $sql);
 
           if (mysqli_num_rows($res) > 0) {
@@ -562,7 +629,7 @@ li{
       <h1 id="labpage_page"> Leb items</h1>
       <section id="lab_iterms">
     <?php 
-          $sql = "SELECT * FROM images ";
+          $sql = "SELECT * FROM images where category= 'laptop'";
           $res = mysqli_query($conn,  $sql);
 
           if (mysqli_num_rows($res) > 0) {
@@ -634,7 +701,7 @@ li{
 
       document.getElementById("add_iterms").onclick=function appear1(){
           document.getElementById("add_items_inform").style.display='block';
-        document.getElementById("add_items_inform").style.height='40%';
+        document.getElementById("add_items_inform").style.height='60%';
         
       }
 
@@ -643,6 +710,14 @@ li{
         document.getElementById("add_items_inform").style.height='0%';
         event.preventDefault();
       }
+
+      let y=document.getElementById("category");
+      y.addEventListener('mouseenter',backshow);
+      function backshow(){
+        document.getElementById("category").placeholder='phone/laptop';
+      }
+
+     
       
      </script>
 
